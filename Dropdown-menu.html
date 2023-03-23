@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">  
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
+    <link href="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="Dropdown.css">
+
+</head>
+<body>
+    <div class="container">
+                <div class="dropdown" id="dropdown">
+                <div href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    <span id="options-display"  >Select Options</span>
+                    </div>
+    
+                    <ul class="dropdown-menu" id="options">
+                        
+                        <li data-value="Short answer"><a href="#"><i class="fa fa-align-right"></i> Short answer</a></li>
+                        <li data-value="Paragraph"><a href="#"> <i class="fa fa-align-justify"></i> Paragraph</a></li>
+                        <li data-value="Multiple choice"><a href="#"><i class="fa fa-circle"></i> Multiple choice </a> </li>
+                        <li data-value="Checkboxes"><a href="#"><i class="fa fa-check-square"></i> Checkboxes </a></li>
+                        <li data-value="Drop-down"><a href="#"><i class="fa fa-chevron-circle-down"></i> Drop-down</a></li>
+                        <li data-value="File upload"><a href="#"><i class="fa fa-file"></i> File upload</a></li>
+                        <li data-value="Linear-scale"><a href="#"><i class="fa fa-cog"></i> Linear-scale</a></li>
+                        <li data-value="Multiple choice grid"><a href="#"><i class="fa fa-th-large"></i> Multiple choice grid</a></li>
+                        <li data-value="Tick box grid"><a href="#"><i class="fa fa-th"></i> Tick box grid</a></li>
+                        <li data-value="Date"><a href="#"><i class="fa fa-calendar"></i> Date</a></li>
+                        <li data-value="Time"><a href="#"><i class="fa fa-times-circle"></i> Time</a></li>
+                    </ul>
+                </div>
+    </div>
+   
+</body>
+<script>
+
+    $('#options').on('click','li', function(e) {
+        $('#dropdown').click();
+        
+        var element = $(this).html();
+        var i = $('i', element).attr('class');
+    
+        var val = "<i class='"+i+"'></i> &nbsp;";
+    console.log(val);
+        $('#options-display').html(val + $(this).data('value') );
+    });
+         </script>
+         
+</html>
